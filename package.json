@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "npm run generate && firebase deploy --only hosting"
+    "deploy": "npm run generate && firebase deploy --only hosting --project portfolio-matthias"
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",

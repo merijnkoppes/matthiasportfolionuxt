@@ -203,7 +203,7 @@ const closeMobileMenu = () => {
   background-color: #fff;
   overflow: hidden;
   transition: height 0.5s ease-out;
-  top: 60px;
+  top: 100%;
   left: 0;
   height: 0;
   padding-top: 10px;
