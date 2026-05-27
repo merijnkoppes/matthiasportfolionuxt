@@ -10,22 +10,27 @@
             class="link"
             active-class="active"
             exact-active-class="active"
-            >About</NuxtLink
           >
+            About
+          </NuxtLink>
+
           <NuxtLink
             to="/video"
             class="link"
             active-class="active"
             exact-active-class="active"
-            >Video</NuxtLink
           >
+            Video
+          </NuxtLink>
+
           <NuxtLink
             to="/photo"
             class="link"
             active-class="active"
             exact-active-class="active"
-            >Photo</NuxtLink
           >
+            Photo
+          </NuxtLink>
         </nav>
 
         <button
@@ -51,25 +56,30 @@
           class="link"
           active-class="active"
           exact-active-class="active"
-          @click="toggleMobileMenu"
-          >About</NuxtLink
+          @click="closeMobileMenu"
         >
+          About
+        </NuxtLink>
+
         <NuxtLink
           to="/video"
           class="link"
           active-class="active"
           exact-active-class="active"
-          @click="toggleMobileMenu"
-          >Video</NuxtLink
+          @click="closeMobileMenu"
         >
+          Video
+        </NuxtLink>
+
         <NuxtLink
           to="/photo"
           class="link"
           active-class="active"
           exact-active-class="active"
-          @click="toggleMobileMenu"
-          >Photo</NuxtLink
+          @click="closeMobileMenu"
         >
+          Photo
+        </NuxtLink>
       </nav>
     </div>
   </header>
@@ -92,6 +102,11 @@ const toggleMobileMenu = async () => {
 
   mobileMenuHeight.value = "0";
 };
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false;
+  mobileMenuHeight.value = "0";
+};
 </script>
 
 <style scoped lang="scss">
@@ -107,9 +122,11 @@ const toggleMobileMenu = async () => {
   margin: 0;
   padding: 0;
   user-select: none;
+  background-color: #fff;
 }
 
 .container {
+  position: relative;
   z-index: 5;
   background-color: #fff;
   border-bottom: 2px solid #000;
@@ -192,10 +209,12 @@ const toggleMobileMenu = async () => {
   padding-top: 10px;
   border-bottom: 2px solid #000;
   z-index: 100;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .mobile-menu.show {
+  border-bottom: 2px solid #000;
+  display: flex;
   height: auto;
 }
 
@@ -210,11 +229,6 @@ const toggleMobileMenu = async () => {
 
   .burger-menu {
     display: flex;
-  }
-
-  .mobile-menu.show {
-    display: flex;
-    height: auto;
   }
 
   .link {
