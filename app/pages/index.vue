@@ -41,8 +41,6 @@
       >
         @houtum.van.matthias
       </a>
-      <br />
-      email:
     </p>
   </main>
 </template>
